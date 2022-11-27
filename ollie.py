@@ -14,8 +14,10 @@ print('''
 | |              | | |              | | |              | | |              | | |              | |
 | '--------------' | '--------------' | '--------------' | '--------------' | '--------------' |
  '----------------' '----------------' '----------------' '----------------' '----------------' 
-                                                                                    -Anirudh Dilli
+                                                                                    @0day, @VainXploits
+                                                                                      Twitter: https://twitter.com/0dayCTF
                                                                                       Twitter: https://twitter.com/VainXploits
+                                                                                    
 ''')
 
 IP_var = input("Receiving IP: ")
