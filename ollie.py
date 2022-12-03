@@ -23,6 +23,7 @@ print('''
                                                                                     
 ''')
 
+# Variables
 user_in = input("What payload do you want to use: ")
 IP_var = input("Receiving IP: ")
 PORT_var = input("Receiving PORT: ")
