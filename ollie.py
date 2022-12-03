@@ -1,5 +1,4 @@
 import os
-import time
 import urllib.parse
 import base64
 
@@ -77,7 +76,7 @@ def base64_encode():
   print(foxtrot.decode('utf-8'))
 
 # TODO: Work on printing the stuff from display_payload_options() function in a grid format. Ref: https://stackoverflow.com/questions/32460832/print-a-list-of-strings-in-a-grid-format-python
-# TODO: Do the manual labour of putting all the payloads into a txt file.
 # TODO: Work on listener options.
 # TODO: Work on how I can do most of this from single command in the terminal instead of throwing the user a whole bunch of fucking prompts once they run the tool.
 # TODO: ^^ Includes how to select Reverse, Bind or MSF and how to select a particular payload they want(inside the sections in the revhsells website).
+# TODO: Start working on displaying listener options cause it's easier compared to shell options. Then work on printing them in a grid option, preferably using a for loop to go through the 'assets/listener-options.txt' and replacing PORT and in the case of MSF replacing the IP aswell.
