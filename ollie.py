@@ -23,19 +23,10 @@ print('''
                                                                                     
 ''')
 
-IP_var = '10.10.10.10'
-PORT_var = '9001'
+user_in = input("What payload do you want to use: ")
+IP_var = input("Receiving IP: ")
+PORT_var = input("Receiving PORT: ")
 
-user_in = 11
-
-
-#######################NOTES-STR#######################
-# PAYLOAD = input("What payload do you want to use: ")
-# IP_var = input("Receiving IP: ")
-# PORT_var = input("Receiving PORT: ")
-# IP = print(open('file.txt', 'r').read().replace('IP', IP_var) ) # ----> Really Really important.
-# print(open('file.txt', 'r').read().replace(IP + 'PORT', PORT_var))
-#######################NOTES-END#######################
 
 def display_payload_options():
   f = open('assets/payloads.txt', 'r')
@@ -47,18 +38,17 @@ def display_payload_options():
 
 file = open('assets/payloads.txt')
 payloads = file.readlines()
-# print(payloads[0])
 
-
-
+# First function to replace the IP variable from teh payloads
 def display_one():
   kilo = open('assets/payloads.txt')
   content1 = kilo.readlines()
   f = open("assets/current-payload.txt", "x+")
   f = open('assets/current-payload.txt', 'w')
-  f.write(payloads[user_in].replace('IP', IP_var))
+  f.write(payloads[int(user_in)].replace('IP', IP_var))
 display_one()
 
+# Second
 def display_actual():
   file2 = open('assets/current-payload.txt')
   print_payload = file2.readlines()
