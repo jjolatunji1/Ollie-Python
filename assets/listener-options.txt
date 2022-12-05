@@ -1,8 +1,8 @@
 nc -lvnp PORT
 ncat -lvnp PORT
 ncat.exe -lvnp PORT
-ncat.exe -lvnp PORT
-ncat.exe -lvnp PORT
+ncat --ssl -lvnp NaN
+rlwrap -cAr nc -lvnp NaN
 rcat -lp PORT
 rcat -lHp PORT
 python3 -m pwncat -lp PORT

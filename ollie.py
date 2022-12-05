@@ -19,15 +19,27 @@ print('''
                                                                                     @0dayCTF, @VainXploits
                                                                                       Twitter: https://twitter.com/0dayCTF
                                                                                       Twitter: https://twitter.com/VainXploits
-                                                                                    
 ''')
 
+# Bash NC C Haskell Perl Perl PHP Windows ConPty Powershell Python Python3 Ruby socat node.js java js groovy telnet zsh lua golang vlang awk dart
+
+# nc ncat ncat.exe ncat(TLS) rlwrap+nc rustcat rustcat+history pwncat windows conpty socat socat(TTY) powercat msfconsole
+
 # Variables
+listener_options = ['nc', 'ncat', 'ncat.exe', 'ncat(TLS)', 'rlwrap+nc', 'rustcat', 'rustcat', 'rustcat+history', 'pwncat', 'Windows ConPty', 'socat', 'socat(TTY)', 'powercat', 'msfconsole']
 user_in = input("What payload do you want to use: ")
 IP_var = input("Receiving IP: ")
 PORT_var = input("Receiving PORT: ")
 
+# Fix the fucking spacing between each letter when the list is printed, I don't even know why the fuck this is happening 🤷‍♂️
+def print_listener_options(listener_options):
+  for lists in listener_options:
+    for i in lists:
+      print(i,end = '\t')
+    print()
+print_listener_options(listener_options)
 
+# Work in progress
 def display_payload_options():
   f = open('assets/payloads.txt', 'r')
   file_contents = f.read()
