@@ -24,17 +24,36 @@ print('''
 # Bash NC C Haskell Perl Perl PHP Windows ConPty Powershell Python Python3 Ruby socat node.js java js groovy telnet zsh lua golang vlang awk dart
 
 # Variables
-payload_options_reverse = ["Bash", "NC", "C", "Haskell", "Perl", "PHP", "Windows ConPty", "Powershell", "Python", "Python3", "Ruby", "socat", "node.js", "java", "Groovy", "telnet", "zsh", "lua", "golang", "vlang", "awk", "dart"]
+payload_options_reverse = ["1. Bash", "2. Cats", "3. C", "4. Haskell", "5. Perl", "6. PHP", "7. Windows ConPty", "8. Powershell", "9. Python", "10. Python3", "11. Ruby", "12. socat", "13. node.js", "14. java", "15. Groovy", "16. telnet", "17. zsh", "18. lua", "19. golang", "20. vlang", "21. awk", "22. dart"]
 listener_options = ['1. nc', '2. ncat', '3. ncat.exe', '4. ncat(TLS)', '5. rlwrap+nc', '6. rustcat', '7. rustcat+history', '8. pwncat', '9. Windows ConPty', '10. socat', '11. socat(TTY)', '12. powercat', '13. msfconsole']
+bash_payloads = ["1. Bash -1", "2. Bash 196", "3. Bash read line", "4. Bash 5", "5. Bash UDP"]
+cats_payloads = ["1. nc mkfifo", "2. nc -e", "3. nc.exe -e", "4. nc -c", "5. ncat -e", "6. ncat.exe -e", "7. ncat UDP", "8. rustcat"]
 
-# Work in progress
 def display_payload_options():
- return False
+  for i in payload_options_reverse:
+    print(i)
+display_payload_options()
 
 user_in = input("What payload do you want to use: ")
+
+# Work in progress
+def display_payload_options_reverse():
+  if user_in == "1":
+    for i in bash_payloads:
+      print(i)
+  elif user_in == "2":
+    for beta in cats_payloads:
+      print(beta)
+  else:
+    print("Hi")
+  # elif user_in == "3":
+  #   return True
+
+display_payload_options_reverse()
+
 IP_var = input("Receiving IP: ")
 PORT_var = input("Receiving PORT: ")
-
+    
 file = open('assets/payloads.txt')
 payloads = file.readlines()
 
