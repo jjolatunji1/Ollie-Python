@@ -34,14 +34,14 @@ def display_payload_options():
     print(i)
 display_payload_options()
 
-user_in = input("What payload do you want to use: ")
+user_in_main = input("What payload do you want to use: ")
 
 # Work in progress
 def display_payload_options_reverse():
-  if user_in == "1":
+  if user_in_main == "1":
     for i in bash_payloads:
       print(i)
-  elif user_in == "2":
+  elif user_in_main == "2":
     for beta in cats_payloads:
       print(beta)
   else:
@@ -51,9 +51,10 @@ def display_payload_options_reverse():
 
 display_payload_options_reverse()
 
+user_in = input("What payload do you want to use: ")
 IP_var = input("Receiving IP: ")
 PORT_var = input("Receiving PORT: ")
-    
+
 file = open('assets/payloads.txt')
 payloads = file.readlines()
 
@@ -117,3 +118,4 @@ def base64_encode():
 # TODO: Work on how I can do most of this from single command in the terminal instead of throwing the user a whole bunch of fucking prompts once they run the tool.
 # TODO: ^^ Includes how to select Reverse, Bind or MSF and how to select a particular payload they want(inside the sections in the revhsells website).
 # TODO: Start working on displaying listener options cause it's easier compared to shell options. Then work on printing them in a grid option, preferably using a for loop to go through the 'assets/listener-options.txt' and replacing PORT and in the case of MSF replacing the IP aswell.
+# TODO: Research input range because huge payloads like the C ones, PHP ones and lot of others exist in singular files rather than in one payloads.txt so I have to use the input ranges in the if conditional statements to make it work.
