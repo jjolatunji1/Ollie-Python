@@ -23,9 +23,8 @@ print('''
 
 # Bash NC C Haskell Perl Perl PHP Windows ConPty Powershell Python Python3 Ruby socat node.js java js groovy telnet zsh lua golang vlang awk dart
 
-# nc ncat ncat.exe ncat(TLS) rlwrap+nc rustcat rustcat+history pwncat windows conpty socat socat(TTY) powercat msfconsole
-
 # Variables
+payload_options_reverse = ["Bash", "NC", "C", "Haskell", "Perl", "PHP", "Windows ConPty", "Powershell", "Python", "Python3", "Ruby", "socat", "node.js", "java", "Groovy", "telnet", "zsh", "lua", "golang", "vlang", "awk", "dart"]
 listener_options = ['1. nc', '2. ncat', '3. ncat.exe', '4. ncat(TLS)', '5. rlwrap+nc', '6. rustcat', '7. rustcat+history', '8. pwncat', '9. Windows ConPty', '10. socat', '11. socat(TTY)', '12. powercat', '13. msfconsole']
 
 # Work in progress
@@ -76,18 +75,18 @@ def listener_options_exec():
 listener_options_exec()
 
 ##############################ENCODING PAYLOAD SECTION OF CODE##############################
-# This function is for urlencoding the payloads.
+# This function is for urlencoding the payloads. Needs working on
 def url_encode():
   alpha = urllib.parse.quote('payload', safe='')
   print(alpha)
 
-# This function is for double urlencoding the payloads.
+# This function is for double urlencoding the payloads. Needs working on
 def double_url_encode():
   bravo = urllib.parse.quote('payload', safe='')
   charlie = urllib.parse.quote(bravo, safe='')
   print(charlie)
 
-# This function is for base64 encoding the payloads.
+# This function is for base64 encoding the payloads. Needs working on
 def base64_encode():
   delta = 'PAYLOAD'
   echo = delta.encode('utf-8')
