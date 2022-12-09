@@ -49,6 +49,8 @@ def display_payload_options_reverse():
   # elif user_in == "3":
   #   return True
 
+# TODO: rewrite display_one and display_actual for each payload_options_reverse AND if user_in_main = x, display_actual to get from specific bash/cats/c/haskell/etc folders.
+
 display_payload_options_reverse()
 
 user_in = input("What payload do you want to use: ")
