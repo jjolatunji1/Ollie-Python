@@ -42,13 +42,14 @@ def display_payload_options_reverse():
     for i in bash_payloads:
       print(i)
   elif user_in_main == "2":
-    for beta in cats_payloads:
-      print(beta)
+    for i in cats_payloads:
+      print(i)
   else:
     print("Hi")
   # elif user_in == "3":
   #   return True
 
+# TODO: Add IP saving function.
 # TODO: rewrite display_one and display_actual for each payload_options_reverse AND if user_in_main = x, display_actual to get from specific bash/cats/c/haskell/etc folders.
 
 display_payload_options_reverse()

