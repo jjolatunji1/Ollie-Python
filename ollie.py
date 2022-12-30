@@ -61,7 +61,7 @@ PORT_var = input("Receiving PORT: ")
 file = open('assets/payloads.txt')
 payloads = file.readlines()
 
-# First function to replace the IP variable from teh payloads
+# First function to replace the IP variable from the payloads
 def display_one():
   kilo = open('assets/payloads.txt')
   content1 = kilo.readlines()
